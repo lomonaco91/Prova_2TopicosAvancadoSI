@@ -9,12 +9,12 @@ public class ShoppingServiceImpl implements ShoppingService {
 	private Shopping shopping;
 
 	@Override
-	public String[] listShoppingNames() {
+	public String[] listOrderShopping() {
 		return shopping.listShopingNames();
 	}
 
 	@Override
-	public String saveNewShopping(String description) {
+	public String addOrderShopping(String description) {
 		shopping.createNewShopping(description);
 		return null;
 	}
