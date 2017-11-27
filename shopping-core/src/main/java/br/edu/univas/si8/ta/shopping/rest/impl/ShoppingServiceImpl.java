@@ -7,7 +7,6 @@ import br.edu.univas.si8.ta8.shopping.ejb.interfaces.Shopping;
 
 public class ShoppingServiceImpl implements ShoppingService {
 	
-	//verificar<<<IMPORTANTE>>
 	@EJB(mappedName = "java:app/shopping-ejb-0.1-SNAPSHOT/ShoppingBean!br.edu.univas.si8.ta8.shopping.ejb.interfaces.ShoppingRemote")
 	
 	private Shopping shopping;

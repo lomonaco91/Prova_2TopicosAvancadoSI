@@ -1,13 +1,11 @@
 package entities;
 
-
 import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-
 
 @Entity(name = "shopping_order")
 @SequenceGenerator(name = "seq_shopping_order", 
@@ -46,5 +44,4 @@ public class Shopping {
 	public void setOrderTime(Timestamp orderTime) {
 		this.orderTime = orderTime;
 	}
-	
 }
