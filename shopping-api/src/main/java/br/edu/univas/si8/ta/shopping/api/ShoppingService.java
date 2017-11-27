@@ -11,13 +11,13 @@ import javax.ws.rs.core.MediaType;
 public interface ShoppingService {
 
 	@GET
-	@Path("/order/all")
+	@Path("/all")
 	@Produces(MediaType.APPLICATION_JSON)
-	String[] listOrderShopping();
+	String[] listOrderShoppingNames();
 
 	@POST
-	@Path("/order/add")
+	@Path("/add")
 	@Produces(MediaType.APPLICATION_JSON)
-	String addOrderShopping(@FormParam("description") String description);
+	String saveOrderShopping(@FormParam("description") String description);
 
 }

@@ -7,22 +7,20 @@ import br.edu.univas.si8.ta8.shopping.ejb.interfaces.Shopping;
 
 public class ShoppingServiceImpl implements ShoppingService {
 	
-	//verificar
-	@EJB(mappedName="")
+	//verificar<<<IMPORTANTE>>
+	@EJB(mappedName = "java:app/shopping-ejb-0.1-SNAPSHOT/ShoppingBean!br.edu.univas.si8.ta8.shopping.ejb.interfaces.ShoppingRemote")
 	
 	private Shopping shopping;
 
 	@Override
-	public String[] listOrderShopping() {
+	public String[] listOrderShoppingNames() {
 		return shopping.listShopingNames();
 	}
 
 	@Override
-	public String addOrderShopping(String description) {
+	public String saveOrderShopping(String description) {
 		shopping.createNewShopping(description);
-		return null;
+		return "{\"Message\": \"Success\"}";
 	}
 	
-	
-
 }
