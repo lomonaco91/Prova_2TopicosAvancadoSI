@@ -4,6 +4,6 @@ public interface Shopping {
 	
 	void createNewShopping(String shoppingDescription);
 
-	String[] listShopingNames();
+	String[] ListAllShoppingNames();
 
 }

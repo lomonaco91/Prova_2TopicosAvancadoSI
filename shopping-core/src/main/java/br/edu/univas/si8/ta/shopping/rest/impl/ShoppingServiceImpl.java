@@ -14,7 +14,7 @@ public class ShoppingServiceImpl implements ShoppingService {
 
 	@Override
 	public String[] listOrderShoppingNames() {
-		return shopping.listShopingNames();
+		return shopping.ListAllShoppingNames();
 	}
 
 	@Override

@@ -1,16 +1,19 @@
 package entities;
 
-import java.sql.Date;
+
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @Entity(name = "shopping_order")
-@SequenceGenerator(name = "seq_shopping_order", sequenceName = "seq_shopping_order", allocationSize = 1)
+@SequenceGenerator(name = "seq_shopping_order", 
+sequenceName = "seq_shopping_order", 
+allocationSize = 1)
+
 public class Shopping {
 	
 	@Id
@@ -18,9 +21,7 @@ public class Shopping {
 	private Integer id;
 	
 	private String description;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date orderTime;
+	private Timestamp orderTime;
 
 	public Integer getId() {
 		return id;
@@ -38,11 +39,11 @@ public class Shopping {
 		this.description = description;
 	}
 
-	public Date getOrderTime() {
+	public Timestamp getOrderTime() {
 		return orderTime;
 	}
 
-	public void setOrderTime(Date orderTime) {
+	public void setOrderTime(Timestamp orderTime) {
 		this.orderTime = orderTime;
 	}
 	

@@ -9,7 +9,7 @@ import entities.Shopping;
 @Stateless
 public class ShoppingDAO {
 	
-	@PersistenceContext(unitName = "shopping_order")
+	@PersistenceContext(unitName = "shopping")
 	private EntityManager em;
 
 	public void insert(Shopping shop) {

@@ -1,5 +1,6 @@
 package beans;
 
+import java.sql.Timestamp;
 import java.util.stream.Collectors;
 import javax.ejb.EJB;
 import br.edu.univas.si8.ta8.shopping.ejb.interfaces.ShoppingLocal;
@@ -14,14 +15,20 @@ public class ShoppingBean implements ShoppingLocal, ShoppingRemote {
 
 	@Override
 	public void createNewShopping(String shoppingDescription) {
-		Shopping shop = new Shopping();
-		shop.setDescription(shoppingDescription);
+		Shopping shopping = new Shopping();
+		shopping.setDescription(shoppingDescription);
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		shopping.setOrderTime(timestamp);
+		shopDAO.insert(shopping);
 		
 	}
 
 	@Override
-	public String[] listShopingNames() {
-		return shopDAO.listAll().stream().map(Shopping::getDescription).collect(Collectors.toList())
+	public String[] ListAllShoppingNames() {
+		return shopDAO.listAll()
+				.stream()
+				.map(Shopping::getDescription)
+				.collect(Collectors.toList())
 				.toArray(new String[0]);
 	}
 
