@@ -21,5 +21,4 @@ public class ShoppingServiceImpl implements ShoppingService {
 		shopping.createNewShopping(description);
 		return "{\"Message\": \"Success\"}";
 	}
-	
 }
